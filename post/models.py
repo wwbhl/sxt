@@ -15,5 +15,5 @@ class Post(models.Model):
     category = models.ForeignKey(Category)
     def __unicode__(self):
         return u'%s'%self.title
-class Meta():
-    verbose_name_plural='帖子'
+    class Meta():
+        verbose_name_plural='帖子'
