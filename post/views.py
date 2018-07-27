@@ -6,10 +6,13 @@ from django.http import HttpResponse
 from django.shortcuts import render
 import os
 
-from models import *
+# from models import *
+from post.models import Category,Post
 
 # Create your views here.
 def index(request):
-    map = {'categorys':Category.objects.all(),'title':'Django全栈开发'}
-    map['categorys']
-    return render(request,'index.html',map)
+    cates = Category.objects.all()
+    return render(request,'index.html',{'categorys':cates})
+def handle_category(request,categoryId):
+    cate = Category.objects.get(id = categoryId)
+    return render(request,'categorydeatils.html',{'posts':cate.post_set.all()})
