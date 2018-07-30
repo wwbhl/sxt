@@ -40,6 +40,16 @@ class StudentsClassroom(models.Model):
         managed = False
         db_table = 'students_classroom'
 
+class StudentsStudent(models.Model):
+    sname = models.CharField(max_length=10)
+    ssex = models.IntegerField()
+    sdate = models.DateField()
+    croom = models.ForeignKey(StudentsClassroom,models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'students_student'
+
 class SxtLove(models.Model):
     name = models.CharField(max_length=20)
 

@@ -19,5 +19,5 @@ from django.http import HttpResponse
 import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^',include('post.urls'))
+    url(r'^',include('movie.urls')),
 ]
